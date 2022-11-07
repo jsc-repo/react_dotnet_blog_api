@@ -104,7 +104,7 @@ namespace dotnet_blog_api
             app.UseRouting();
 
             app.UseCors(x => x
-                .WithOrigins("http://localhost:3000")
+                .WithOrigins("http://localhost:3000/")
                 .AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowCredentials()

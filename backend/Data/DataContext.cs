@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using dotnet_blog_api.Models;
 using dotnet_blog_api.Services.PasswordHasher;
 using Microsoft.EntityFrameworkCore;
@@ -21,13 +18,13 @@ namespace dotnet_blog_api.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<BlogPost> BlogPosts { get; set; }
-        // public DbSet<BlogPostLikes> Likes { get; set; }
 
         public DbSet<RefreshToken> RefreshTokens { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             var adminPassword = _configuration.GetSection("AppSettings:AdminPassword").Value;
+            Console.WriteLine(adminPassword);
             modelBuilder.Entity<User>().HasData(
                 new User
                 {

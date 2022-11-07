@@ -60,10 +60,10 @@ const SignInForm = ({
         headers: {
           "Content-type": "application/json; charset=UTF-8",
         },
-        // you need credentials included bc you want to receive the cookies
+        // you need credentials included to receive the cookies
         credentials: "include",
       });
-
+      console.log(res);
       let result = await res.json();
       console.log(result);
 
